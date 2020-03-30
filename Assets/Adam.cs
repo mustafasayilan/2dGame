@@ -20,7 +20,7 @@ public class Adam : MonoBehaviour
     {
         Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = movement.normalized * hiz;
-        transform.Translate(hiz * Time.deltaTime , 0, 0);
+        transform.Translate(hiz * Time.deltaTime , Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime, 0);
     }
 
     void FixedUpdate()
